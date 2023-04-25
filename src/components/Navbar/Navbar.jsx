@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = ({ navigationLabels }) => {
   return navigationLabels.map((item) => (
-    <NavLink to={item.route} style={()=>{return {margin: '10px'}}}>{item.labelUA}</NavLink>
+    <NavLink key={item.id} to={item.route} style={()=>{return {margin: '10px'}}}>{item.labelUA}</NavLink>
   ));
 };
 
