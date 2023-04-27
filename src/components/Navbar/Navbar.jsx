@@ -4,19 +4,17 @@ import styles from "./Navbar.module.css"
 
 const Navbar = ({ navigationLabels }) => {
   return (
-    <nav className={styles.navbar}>
-      {navigationLabels.map((item) => (
+    <nav>
+      <ul className={styles.list}>
+      {navigationLabels.map((item) => (<li key={item.id}>
         <NavLink
-          key={item.id}
           to={item.route}
           className={({isActive}) => isActive ? `${styles.link} ${styles.activeLink}` : styles.link}
-          // style={() => {
-          //   return { margin: "10px" };
-          // }}
         >
           {item.labelUA}
-        </NavLink>
+        </NavLink></li>
       ))}
+      </ul>
     </nav>
   );
 };

@@ -1,7 +1,7 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  min-width: 660px;
+.list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
 .link {
