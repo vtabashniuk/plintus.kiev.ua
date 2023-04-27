@@ -4,6 +4,7 @@ import Store from "pages/Store/Store";
 import Contacts from "pages/Contacts/Contacts";
 import Gallery from "pages/Gallery/Gallery";
 import Homepage from "pages/Homepage/Homepage";
+import NaturalOak from "components/Categories/NaturalOak/NaturalOak";
 
 const router = createBrowserRouter([
   {
@@ -11,15 +12,16 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Homepage /> },
       {
-        path: "/store",
+        path: "store",
         element: <Store />,
+        children: [{ path: "*", element: <NaturalOak /> }],
       },
       {
-        path: "/contacts",
+        path: "contacts",
         element: <Contacts />,
       },
       {
-        path: "/gallery",
+        path: "gallery",
         element: <Gallery />,
       },
     ],

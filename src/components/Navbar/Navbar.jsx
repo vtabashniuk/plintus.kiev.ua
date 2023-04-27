@@ -1,10 +1,24 @@
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import styles from "./Navbar.module.css"
 
 const Navbar = ({ navigationLabels }) => {
-  return navigationLabels.map((item) => (
-    <NavLink key={item.id} to={item.route} style={()=>{return {margin: '10px'}}}>{item.labelUA}</NavLink>
-  ));
+  return (
+    <nav className={styles.navbar}>
+      {navigationLabels.map((item) => (
+        <NavLink
+          key={item.id}
+          to={item.route}
+          className={styles.link}
+          // style={() => {
+          //   return { margin: "10px" };
+          // }}
+        >
+          {item.labelUA}
+        </NavLink>
+      ))}
+    </nav>
+  );
 };
 
 export default Navbar;
