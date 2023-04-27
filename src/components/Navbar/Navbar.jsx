@@ -9,7 +9,7 @@ const Navbar = ({ navigationLabels }) => {
         <NavLink
           key={item.id}
           to={item.route}
-          className={styles.link}
+          className={({isActive}) => isActive ? `${styles.link} ${styles.activeLink}` : styles.link}
           // style={() => {
           //   return { margin: "10px" };
           // }}

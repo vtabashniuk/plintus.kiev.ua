@@ -22,3 +22,8 @@
 .link:hover {
     box-shadow: 0px 5px 15px 4px rgba(226, 194, 125,1);
 }
+
+.activeLink {
+    background-color: white;
+    color: #7C5F35;
+}
