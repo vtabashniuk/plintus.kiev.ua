@@ -1,19 +1,21 @@
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css"
+import NavMenuItem from "components/NavMenuItem/NavMenuItem";
 
-const Navbar = ({ navigationLabels }) => {
+const Navbar = ({ navMenu }) => {
   return (
     <nav>
       <ul className={styles.list}>
-      {navigationLabels.map((item) => (<li key={item.id}>
+      {/* {navigationLabels.map((item) => (<li key={item.id}>
         <NavLink
-          to={item.route}
+          to={item.url}
           className={({isActive}) => isActive ? `${styles.link} ${styles.activeLink}` : styles.link}
         >
-          {item.labelUA}
+          {item.name}
         </NavLink></li>
-      ))}
+      ))} */}
+      {navMenu.map(menuItem => {return <NavMenuItem items={menuItem} />})}
       </ul>
     </nav>
   );
@@ -22,7 +24,7 @@ const Navbar = ({ navigationLabels }) => {
 export default Navbar;
 
 Navbar.propTypes = {
-  navigationLabels: PropTypes.arrayOf(
-    PropTypes.shape({ route: PropTypes.string, labelUA: PropTypes.string })
+  navMenu: PropTypes.arrayOf(
+    PropTypes.shape({ url: PropTypes.string, name: PropTypes.string })
   ),
 };
